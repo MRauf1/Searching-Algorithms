@@ -1,22 +1,23 @@
 public class SearchTesting {
     
     private final static int SIZE = 100;
-    private final static int MAX_VALUE = 1000;
     
     public static void main(String[] args) {
         
-        //Initialize the testing array and fill it with random integers
+        //Initialize the sorted testing array
         int[] testArray = new int[SIZE];
         
-        for(int i = 0; i < testArray.length; i++) {
+        for(int i = 0; i < SIZE; i++) {
             
-            testArray[i] = (int)(Math.random() * MAX_VALUE);
+            testArray[i] = i;
         
         }
         
-        int targetNum = (int)(Math.random() * MAX_VALUE);
+        int targetNum = (int)(Math.random() * SIZE);
         
-        int index = LinearSearch.linearSearch(testArray, targetNum);
+        //Search for the target value
+        //int index = LinearSearch.linearSearch(testArray, targetNum);
+        int index = BinarySearch.binarySearch(testArray, targetNum);
         
         System.out.println(index);
         
